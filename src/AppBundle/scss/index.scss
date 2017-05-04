@@ -1,0 +1,129 @@
+$primary-color: #9C27B0;
+$primary-color-trans: rgba(156, 39, 176, .7);
+@font-face {
+    font-family: white-rabbit;
+    src: url('../fonts/telegrama_raw.otf');
+}
+#outier-wrapper {
+    min-height: 100vh;
+    
+    #name-wrapper {
+        padding: 60px 0 40px 0;
+        display: flex;
+        align-items: center;
+        #icon {
+            font-size: 70px;
+            padding-right: 40px;
+        }
+        #name-title-wrapper {
+            width: 60%;
+            #name {
+                font-size: 25px;
+            }
+            #title{
+                font-size: 15px;
+                color: #878787;
+            }
+        }
+    }
+    #text-wrapper {
+        p:first-child {
+            padding-bottom: 40px;
+        }
+        
+        p {
+            padding-bottom: 14px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: $primary-color;            
+        }
+        .padding-both {
+            padding: 0 7px 0 7px;
+        }
+        .padding-left {
+            padding: 0 0 0 7px;
+        }
+        color: rgba(33,33,33,.7);
+    }
+    #all-section-wrapper {
+        a {
+            text-decoration: none;
+            color: rgba(33,33,33,.7);
+        }
+        padding-top: 60px;
+        padding-bottom: 60px;
+        .divider {
+            height: 50px;
+            .line {
+                height: 50px;
+                background-color: rgba(33,33,33,.3);
+                display: inline-block;
+                width: 1px;
+            }
+        }
+        .section-wrapper{
+            display: flex;
+            align-items: center;
+            .section-icon{
+                margin: auto;
+                background-color: $primary-color-trans;
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                border-color: $primary-color;
+                transition: background-color 0.7s; 
+                .fa {
+                    color: white;
+                    font-size: 24px;
+                }
+            }
+            .section-icon:hover {
+                background-color: white;
+                cursor: pointer;
+                .fa {
+                    color: $primary-color-trans;
+                }
+            }
+            .section-title-right {
+                //padding: 19px 0 19px 40px;
+                color: rgba(33,33,33,.7);
+                font-size: 14px;
+                font-family: white-rabbit;
+                display: flex;
+                text-align: center;
+                transition: color 0.7s;
+                .tag {
+                    //width: 50px;
+                    padding: 0 7px;
+                }
+            }
+            .section-title-right:hover {
+                color: $primary-color;
+                cursor: pointer;
+            }
+            .section-title-left {
+                //padding: 19px 0 19px 40px;
+                text-align: right;
+                color: rgba(33,33,33,.7);
+                font-size: 14px;
+                font-family: white-rabbit;
+                display: flex;
+                text-align: center;
+                transition: color 0.7s;
+                .tag {
+                    //width: 50px;
+                    padding: 0 7px;
+                }
+            }
+            .section-title-left:hover {
+                color: $primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
