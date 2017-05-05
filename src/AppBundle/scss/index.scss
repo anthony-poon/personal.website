@@ -1,24 +1,41 @@
 $primary-color: #9C27B0;
 $primary-color-trans: rgba(156, 39, 176, .7);
+$xs: 400px; 
+$sm: 768px;
+$md: 970px;
+$lg: 1200px;
+
 @font-face {
     font-family: white-rabbit;
     src: url('../fonts/telegrama_raw.otf');
 }
 #outier-wrapper {
     min-height: 100vh;
-    
+    @media screen and (max-width: $xs) {
+        display: flex;
+        justify-content: center;
+    }
     #name-wrapper {
-        padding: 60px 0 40px 0;
+        padding: 60px 30px 40px 30px;
         display: flex;
         align-items: center;
+        @media screen and (max-width: $sm) {
+            width: 350px;
+        }
         #icon {
             font-size: 70px;
             padding-right: 40px;
+            @media screen and (max-width: $sm) {
+                padding-right: 10px;
+            }
         }
         #name-title-wrapper {
             width: 60%;
             #name {
                 font-size: 25px;
+                @media screen and (max-width: $sm) {
+                    font-size: 20px;
+                }
             }
             #title{
                 font-size: 15px;
@@ -27,6 +44,11 @@ $primary-color-trans: rgba(156, 39, 176, .7);
         }
     }
     #text-wrapper {
+        padding: 0 30px;
+        @media screen and (max-width: $xs) {
+            width: 320px;
+            padding: 0;
+        } 
         p:first-child {
             padding-bottom: 40px;
         }
@@ -62,6 +84,13 @@ $primary-color-trans: rgba(156, 39, 176, .7);
                 width: 1px;
             }
         }
+        >.container-fluid {
+            @media screen and (max-width: $xs) {
+                width: 300px;
+                margin:  auto;
+                //padding: 0 40px;
+            }
+        }
         .section-wrapper{
             display: flex;
             align-items: center;
@@ -89,40 +118,30 @@ $primary-color-trans: rgba(156, 39, 176, .7);
                     color: $primary-color-trans;
                 }
             }
-            .section-title-right {
+            .section-title {
                 //padding: 19px 0 19px 40px;
                 color: rgba(33,33,33,.7);
                 font-size: 14px;
                 font-family: white-rabbit;
                 display: flex;
-                text-align: center;
+                //text-align: center;
+                align-items: center;
                 transition: color 0.7s;
                 .tag {
                     //width: 50px;
+                    display: inline-block;
                     padding: 0 7px;
                 }
             }
-            .section-title-right:hover {
+            .section-title:hover {
                 color: $primary-color;
                 cursor: pointer;
             }
-            .section-title-left {
-                //padding: 19px 0 19px 40px;
-                text-align: right;
-                color: rgba(33,33,33,.7);
-                font-size: 14px;
-                font-family: white-rabbit;
-                display: flex;
-                text-align: center;
-                transition: color 0.7s;
-                .tag {
-                    //width: 50px;
-                    padding: 0 7px;
+            .section-title.left {
+                justify-content: flex-end;
+                @media screen and (max-width: $sm) {
+                    order: 99;
                 }
-            }
-            .section-title-left:hover {
-                color: $primary-color;
-                cursor: pointer;
             }
         }
     }
