@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="outier-wrapper">
+        <div class="container col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+            <div class="row page-header">
+                <h1>
+                    Contact me
+                </h1>                
+            </div>   
+            <form method="post" action="{{path("contact_me_submit")}}" class="row form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-6">
+                            <label for="name">Who are you?</label>
+                            <input class="form-control" type="text" name="name" placeholder='Your name'/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="name">How can I reply you?</label>
+                            <input class="form-control" type="email" name="email" placeholder='Email'/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <label for="name">How can I help you?</label>
+                            <textarea id="message_content" class="form-control" name="content" placeholder='Your message'></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="g-recaptcha" data-sitekey="6LfqFyAUAAAAALqMd_GiQRa1r6SAorxjYh6jvn4z"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="submit"/>          
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('AppBundle/css/contact_me.css') }}" />
+{% endblock %}
+{% block script %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}

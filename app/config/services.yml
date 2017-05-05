@@ -7,3 +7,8 @@ services:
     #service_name:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+    app.form_exception_listener:
+        class: AppBundle\ExceptionListener\FormExceptionListener
+        arguments: ["@templating"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
