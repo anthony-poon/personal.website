@@ -30,7 +30,6 @@ class DefaultController extends Controller
      * @Route("/contact_me/submit", name="contact_me_submit")
      */
     public function submitAction(Request $request) {
-        var_dump($_POST);
         $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
         $content = htmlspecialchars($_POST["content"]);
@@ -47,6 +46,11 @@ class DefaultController extends Controller
         }
         if (empty($email)) {
             $ex = new FormException("Missing sender email.");
+            $ex->setRedirect($this->generateUrl("contact_me"));
+            throw $ex;
+        }
+        if (empty($content)) {
+            $ex = new FormException("Missing email content.");
             $ex->setRedirect($this->generateUrl("contact_me"));
             throw $ex;
         }
