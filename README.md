@@ -1,4 +1,4 @@
 My personal website
 ================
 
-Yay! My own very website.
+Yay! My very own website.
